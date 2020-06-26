@@ -1,10 +1,6 @@
 FROM continuumio/miniconda3:4.8.2
 MAINTAINER Pablo Escobar <pablo.escobarlopez@unibas.ch>
 
-# environment
-ENV PATH="/opt/conda/bin:${PATH}"
-ENV XDG_RUNTIME_DIR=""
-
 # add conda channels
 RUN conda config --add channels conda-forge
 RUN conda config --add channels bioconda
