@@ -18,17 +18,16 @@ fastqc==0.11.8
 
 ## Downloading the container with Singularity (latest)
 
-   `$> singularity pull -n "pipeline_usb.img" docker://pescobar/scicore-usb-pipeline:latest`
+   `$> singularity pull "pipeline_usb.sif" docker://pescobar/scicore-usb-pipeline:latest`
 
 ## Downloading the container with Singularity (specific version)
 
-   `$> singularity pull -n "pipeline_usb.img" docker://pescobar/scicore-usb-pipeline:0.0.1`
+   `$> singularity pull "pipeline_usb_0.0.1.sif" docker://pescobar/scicore-usb-pipeline:0.0.1`
 
 ## Using the container with singularity
 
-   `$> singularity exec pipeline_usb.img samtools -h`
+   `$> singularity exec pipeline_usb.sif samtools --help`
 
 ## Interactive shell inside the container with singularity
 
-   `$> singularity shell pipeline_usb.img`
-
+   `$> singularity shell pipeline_usb.sif`
