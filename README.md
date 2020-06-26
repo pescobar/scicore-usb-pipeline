@@ -16,9 +16,13 @@ iqtree==1.6.12
 fastqc==0.11.8
 ```
 
-## Downloading the container with Singularity
+## Downloading the container with Singularity (latest)
 
    `$> singularity pull -n "pipeline_usb.img" docker://pescobar/scicore-usb-pipeline:latest`
+
+## Downloading the container with Singularity (specific version)
+
+   `$> singularity pull -n "pipeline_usb.img" docker://pescobar/scicore-usb-pipeline:0.0.1`
 
 ## Using the container with singularity
 
