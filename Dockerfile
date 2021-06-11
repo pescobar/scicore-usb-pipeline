@@ -1,6 +1,12 @@
 FROM continuumio/miniconda3:4.9.2
 MAINTAINER Pablo Escobar <pablo.escobarlopez@unibas.ch>
 
+# install some system deps
+# poppler-utils provides utility "pdfunite"
+RUN apt-get update && apt-get install -y \
+    poppler-utils \
+ && rm -rf /var/lib/apt/lists/*
+
 # add conda channels
 RUN conda config --add channels conda-forge
 RUN conda config --add channels bioconda
