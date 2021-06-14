@@ -38,4 +38,4 @@ RUN conda install --yes -c bioconda pilon==1.24
 RUN conda install --yes -c bioconda muscle==3.8.1551
 RUN conda install --yes -c bioconda fastqc==0.11.9
 RUN conda install --yes -c bioconda snp-sites==2.5.1
-RUN conda install --yes -c bioconda pangolin==3.0.5
+RUN conda install --yes -c bioconda pangolin
