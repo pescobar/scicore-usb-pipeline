@@ -45,6 +45,7 @@ RUN conda install --yes -c conda-forge r-seqinr==4.2_8
 RUN conda install --yes -c conda-forge r-rmariadb==1.1.1
 RUN conda install --yes -c conda-forge r-reshape2==1.4.4
 RUN conda install --yes -c conda-forge r-rmarkdown
+RUN conda install --yes -c conda-forge r-flexdashboard
 
 # Download snpEff databases
 RUN snpEff download NC_045512.2
