@@ -44,11 +44,11 @@ RUN conda install --yes -c bioconda bioconductor-gviz==1.36.1
 RUN conda install --yes -c conda-forge r-seqinr==4.2_8
 RUN conda install --yes -c conda-forge r-rmariadb==1.1.1
 RUN conda install --yes -c conda-forge r-reshape2==1.4.4
-RUN conda install --yes -c conda-forge r-rmarkdown
-RUN conda install --yes -c conda-forge r-flexdashboard
-RUN conda install --yes -c conda-forge r-dt
-RUN conda install --yes -c conda-forge r-shiny
-RUN conda install --yes -c conda-forge r-plotly
+RUN conda install --yes -c conda-forge r-rmarkdown==2.8
+RUN conda install --yes -c conda-forge r-flexdashboard==0.5.2
+RUN conda install --yes -c conda-forge r-dt==0.18
+RUN conda install --yes -c conda-forge r-shiny==1.6.0
+RUN conda install --yes -c conda-forge r-plotly==4.9.4
 
 # Download snpEff databases
 RUN snpEff download NC_045512.2
