@@ -38,11 +38,13 @@ RUN conda install --yes -c bioconda muscle==3.8.1551
 RUN conda install --yes -c bioconda fastqc==0.11.9
 RUN conda install --yes -c bioconda snp-sites==2.5.1
 RUN conda install --yes -c bioconda bioconductor-gviz==1.36.1
+#RUN conda install --yes -c conda-forge -c bioconda "pangolin==3.0.5--pyhdfd78af_0"
 
 # conda-forge installations
 RUN conda install --yes -c conda-forge r-seqinr==4.2_8
 RUN conda install --yes -c conda-forge r-rmariadb==1.1.1
 RUN conda install --yes -c conda-forge r-reshape2==1.4.4
+RUN conda install --yes -c conda-forge r-rmarkdown
 
 # Download snpEff databases
 RUN snpEff download NC_045512.2
