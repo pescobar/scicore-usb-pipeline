@@ -45,3 +45,6 @@ RUN conda install --yes -c bioconda bioconductor-gviz
 RUN conda install --yes -c conda-forge r-seqinr
 RUN conda install --yes -c conda-forge r-rmariadb
 RUN conda install --yes -c conda-forge r-reshape2
+
+# Download snpEff databases
+RUN snpEff download NC_045512.2
