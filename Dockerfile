@@ -40,6 +40,7 @@ RUN conda install --yes -c bioconda fastqc==0.11.9
 RUN conda install --yes -c bioconda snp-sites==2.5.1
 RUN conda install --yes -c bioconda pangolin==2.3.6
 RUN conda install --yes -c bioconda bioconductor-gviz
+RUN conda install --yes -c bioconda pangolearn
 
 # conda-forge installations
 RUN conda install --yes -c conda-forge r-seqinr
