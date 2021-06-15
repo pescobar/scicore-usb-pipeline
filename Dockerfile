@@ -27,7 +27,6 @@ RUN conda install --yes -c bioconda snpeff==5.0
 RUN conda install --yes -c bioconda gofasta==0.0.4
 RUN conda install --yes -c bioconda minimap2==2.20
 RUN conda install --yes -c bioconda ucsc-fatovcf==407
-RUN conda install --yes -c bioconda biopython==1.79
 RUN conda install --yes -c bioconda usher==0.3.1
 RUN conda install --yes -c bioconda bioconductor-rsamtools==2.8.0
 RUN conda install --yes -c bioconda bioconductor-rtracklayer==1.52.0
