@@ -43,3 +43,4 @@ RUN conda install --yes -c bioconda bioconductor-gviz
 
 # conda-forge installations
 RUN conda install --yes -c conda-forge r-seqinr
+RUN conda install --yes -c conda-forge r-rmariadb
