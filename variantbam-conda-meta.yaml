@@ -1,0 +1,52 @@
+# this is a custom conda recipe based on https://github.com/bioconda/bioconda-recipes/tree/master/recipes/variantbam
+# but using the latest code published in the variantbam github repo
+
+# version updated from 1.4.4a to 1.4.4b
+{% set version="1.4.4b" %}
+
+package:
+  name: variantbam
+  version: {{ version }}
+
+build:
+  number: 5
+  skip: True # [osx]
+
+source:
+  - url: https://github.com/walaj/VariantBam/archive/b797b78.tar.gz
+    sha256: 6e30e28404302286842d68817de6864233d39104f99f2e81517f62faba554246
+  - url: https://github.com/walaj/SeqLib/archive/2f91f29.tar.gz
+    sha256: 0b2cffc997a6fe139ec3be3bbda0b6688d9fb067f88578ad2855b88d20f4abf0
+    folder: SeqLib
+  - url: https://github.com/walaj/bwa/archive/c02766e3c34ac3f4af9842e20a54b7f9f4b36d0b.tar.gz
+    sha256: 023ccd462a9d2df24c8dd23e42180081a0800134cac2307ac117c21b0ae0ea8c
+    folder: SeqLib/bwa
+  - url: https://github.com/walaj/fermi-lite/archive/5bc90f8d70e2b66184eccbd223a3be714c914365.tar.gz
+    sha256: 58c066239929f48383044fde68ba164bdd15edb2ff0603cdcd6c3fe095171008
+    folder: SeqLib/fermi-lite
+  - url: https://github.com/samtools/htslib/archive/49fdfbda20acbd73303df3c7fef84f2d972c5f8d.tar.gz
+    sha256: e71a83688ca9cb594f5338402681b52f3a95d485eff1901fb23b434332420b0e
+    folder: SeqLib/htslib
+
+requirements:
+  build:
+    - make
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+  host:
+    - xz
+    - bzip2
+    - zlib
+  run:
+    - xz
+    - bzip2
+    - zlib
+
+test:
+  commands:
+    - 'variant --help 2>&1 | grep "Usage: variant"'
+
+about:
+  home: https://github.com/jwalabroad/VariantBam
+  license: GPLv3
+  summary: Filtering and profiling of next-generational sequencing data using region-specific rules

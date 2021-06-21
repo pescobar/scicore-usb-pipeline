@@ -17,7 +17,7 @@ RUN conda install --yes -c bioconda samtools==1.12
 RUN conda install --yes -c bioconda bwa==0.7.17
 RUN conda install --yes -c bioconda mafft==7.480
 RUN conda install --yes -c bioconda iqtree==2.1.2
-RUN conda install --yes -c bioconda variantbam==1.4.4a
+#RUN conda install --yes -c bioconda variantbam==1.4.4a  # we install our custom conda recipe
 RUN conda install --yes -c bioconda bedtools==2.30.0
 RUN conda install --yes -c bioconda bcftools==1.12
 RUN conda install --yes -c bioconda seqtk==1.3
@@ -52,3 +52,12 @@ RUN conda install --yes -c conda-forge r-plotly==4.9.4
 
 # Download snpEff databases
 RUN snpEff download NC_045512.2
+
+# Install our custom variantbam conda recipe
+RUN conda install --yes conda-build
+RUN conda install --yes conda-verify
+RUN mkdir -p /usr/src/variantbam
+COPY ./variantbam-conda-meta.yaml /usr/src/variantbam/meta.yaml
+COPY ./variantbam-conda-build.sh /usr/src/variantbam/build.sh
+RUN cd /usr/src/variantbam/ && conda build .
+RUN conda install --yes --use-local variantbam
